@@ -47,6 +47,9 @@ function showHide(value) {
             works.classList.remove('show')
         }
     }
+    if (value === 'contact') {
+        about_modal.style.display = 'block';
+    }
 }
 const aside = document.querySelector('aside')
 aside.addEventListener('click', e => {
@@ -86,18 +89,3 @@ window.addEventListener('resize', (e) => {
         }
     }
 })
-const navSlide = () => {
-
-    menubar.addEventListener('click', e => {
-        console.log(nav)
-        if (Array.from(nav.classList).includes('show-nav-items')) {
-            nav.classList.remove('show-nav-items');
-            nav.classList.add('hide-nav-items');
-        } else {
-            nav.classList.add('show-nav-items');
-            nav.classList.remove('hide-nav-items');
-        }
-
-    })
-}
-navSlide();
