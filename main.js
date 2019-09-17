@@ -79,13 +79,3 @@ about_modal.addEventListener('click', e => {
     if (Array.from(e.target.classList).includes('modal_wrapper'))
         about_modal.style.display = 'none';
 })
-
-window.addEventListener('resize', (e) => {
-    if (screen.width >= 769) {
-        console.log("Ok")
-        if (Array.from(nav.classList).includes('hide-nav-items')) {
-            nav.classList.remove('hide-nav-items');
-
-        }
-    }
-})
