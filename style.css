@@ -102,7 +102,7 @@ input {
 #sideMenu {
   margin-top: 2%;
   width: 80px;
-  height: 450px;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -130,12 +130,12 @@ input {
 }
 
 #sideMenu i {
-  font-size: 1.5rem !important;
+  font-size: 1rem !important;
   color: rgba(0, 0, 0, 0.5);
 }
 
 #sideMenu p {
-  font-size: 1.3rem !important;
+  font-size: 1.1rem !important;
 }
 
 /* BODY SECTION */
@@ -155,7 +155,7 @@ input {
   width: 30%;
   height: 80vh;
   margin-top: 2%;
-  margin-left: 3%;
+  margin-left: 2%;
   left: 8% !important;
   background: white;
   box-shadow: 6px 8px 6px -6px black;
@@ -182,7 +182,7 @@ input {
   text-align: center;
   padding: 0px 10px 0px 10px;
   color: black;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   font-weight: 200;
   letter-spacing: 2px;
   border-bottom: 1px solid gray;
@@ -205,7 +205,7 @@ input {
 
 .social_media i {
   padding: 10px;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
@@ -225,13 +225,19 @@ input {
   color: #15aabf;
 }
 
+.fa-github {
+  color: purple;
+}
+
 #works,
-#about {
+#about,
+#resume,
+#blog {
   position: absolute;
   width: 30%;
   height: 80vh;
   margin-top: 2%;
-  margin-left: 3%;
+  margin-left: 2.5%;
   left: 8% !important;
   background: white;
   padding: 30px;
@@ -240,57 +246,120 @@ input {
   overflow-y: scroll;
 }
 
+.hr {
+  border: 0.2px solid #ddd;
+
+}
+
+.abt {
+  margin-bottom: 10%;
+}
+
+.services {
+  margin-bottom: 10%;
+}
+
 .abt,
-.pricing {
+.pricing,
+#mySkills {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-column-gap: 10px;
 }
 
 .at {
-  border-right: 1px solid;
+  padding-bottom: 10px;
+  border-right: 0.5px solid #ddd;
 }
 
 .abt p {
   margin-top: 10px;
   /* border-right: 1px solid; */
   display: relative;
-  height: 150px;
-  padding-right: 20px;
-  font-size: 1.8rem;
-}
-
-.expertise {
-  padding-top: 5vh;
-}
-
-.expertise .structure {
-  border: 1px solid;
-  float: left;
-  width: 250px;
-  height: 20px;
-  border-radius: 16px;
-  margin-bottom: 3px;
-}
-
-.expertise .label {
-  border-radius: 16px;
-  background: green;
-  width: 80% !important;
-  height: 100%;
-  padding-left: 10px;
-  padding-top: 3px;
+  height: 180px;
+  padding-right: 10px;
   font-size: 1.2rem;
+  color: #A9A9A9;
 
-  color: white;
 }
 
-.services {
-  margin-top: 2%;
+.otherAbout {
+  float: left;
+  padding: 10px;
+  margin-top: -20px;
+}
+
+.otherAbout p {
+  font-size: 1.2rem;
+  margin-top: 8%;
+  height: auto;
+  padding: 10px;
+  border-bottom: 0.5px solid #ddd;
+}
+
+.otherAbout p strong {
+  color: green;
+  font-size: 1rem;
+}
+
+#experience {
+  border-right: 0.5px solid #ddd;
+}
+
+#experience,
+#education {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+
+.container {
+  width: 100%;
+  background-color: #ddd;
+  height: auto;
+  border-radius: 16px;
+  margin-bottom: 3%;
+}
+
+.skills {
+  text-align: right;
+  height: 30px;
+  color: white;
+  padding-top: 2%;
+}
+
+.html {
+  width: 90%;
+  background-color: #4CAF50;
+}
+
+.css {
+  width: 80%;
+  background-color: #4CAF50;
+}
+
+.js {
+  width: 70%;
+  background-color: #4CAF50;
+}
+
+.node {
+  width: 70%;
+  background-color: #4CAF50;
+}
+
+.net {
+  width: 50%;
+  background-color: #4CAF50;
+}
+
+.services,
+.experienceEducation {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: auto;
-  grid-column-gap: 10px;
   grid-row-gap: 10px;
 }
 
@@ -307,7 +376,25 @@ input {
 .fas,
 .far {
   color: #3cb371;
-  font-size: 4rem;
+  font-size: 3rem !important;
+}
+
+.s1,
+.s2,
+.s3,
+.s4 {
+  border-top: 0.5px solid #ddd;
+  padding: 10px;
+}
+
+.s1,
+.s3 {
+  border-right: 0.5px solid #ddd;
+}
+
+.s3,
+.s4 {
+  margin-top: -10px;
 }
 
 .s1 p,
@@ -325,6 +412,20 @@ input {
   justify-content: space-around;
 }
 
+.fulldl,
+.designdl,
+.others {
+  border-top: 0.5px solid #ddd;
+  padding: 30px !important;
+}
+
+.fulldl {
+  border-right: 0.5px solid #ddd;
+}
+
+.others {
+  border-bottom: 0.5px solid #ddd;
+}
 
 .hide {
   /* display: none !important; */
