@@ -266,6 +266,7 @@ input {
   grid-template-columns: 50% 50%;
 }
 
+
 .at {
   padding-bottom: 10px;
   border-right: 0.5px solid #ddd;
@@ -313,7 +314,15 @@ input {
   align-items: center;
 }
 
+#development,
+#languages {
+  padding: 10px;
+  border-bottom: 0.5px solid #ddd;
+}
 
+#development {
+  border-right: 0.5px solid #ddd;
+}
 
 .container {
   width: 100%;
@@ -330,7 +339,8 @@ input {
   padding-top: 2%;
 }
 
-.html {
+.html,
+.english {
   width: 90%;
   background-color: #4CAF50;
 }
@@ -352,6 +362,16 @@ input {
 
 .net {
   width: 50%;
+  background-color: #4CAF50;
+}
+
+.bangla {
+  width: 100%;
+  background-color: #4CAF50;
+}
+
+.hindi {
+  width: 60%;
   background-color: #4CAF50;
 }
 
