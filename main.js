@@ -1,21 +1,20 @@
 //console.log(window.width)
-setInterval(() => {
-  if (document.querySelector("#about").clientWidth < 250) {
-    document.querySelector(".structure").style.width = "50px";
-    document.querySelector("#about p").style.fontsize = "12px";
-    console.log(document.querySelector(".structure").clientWidth);
-  }
-}, 10);
+
 const nav = document.querySelector(".nav-items");
 const menubar = document.querySelector(".menu-bar");
 const dev_logo = document.querySelector(".logo");
 const about_modal = document.querySelector(".modal_wrapper");
 const close = document.querySelector(".close");
 const button = document.querySelector("button");
+const webdev_project = document.querySelector('#webdev_project');
+const dotnet_project = document.querySelector('#dotnet_project');
+const photo_project = document.querySelector('#photography_project');
+const project_nav = document.querySelector('#works ul');
+
+console.log(dotnet_project)
 
 function showHide(value) {
   value = value.toLowerCase().trim();
-  console.log(value);
   const about = document.querySelector("#about");
   const works = document.querySelector("#works");
   const resume = document.querySelector("#resume");
@@ -113,8 +112,6 @@ function showHide(value) {
 }
 const aside = document.querySelector("aside");
 aside.addEventListener("click", e => {
-  const about = document.querySelector("#about");
-  const works = document.querySelector("#works");
   try {
     const nxtSibling = document.getElementById(e.target.id).nextElementSibling;
     showHide(nxtSibling.textContent);
@@ -125,15 +122,78 @@ aside.addEventListener("click", e => {
   }
 });
 
-// dev_logo.addEventListener('click', e => {
-//     console.log(about_modal)
-//     about_modal.style.display = 'block';
-// })
+project_nav.addEventListener('click', e => {
+  //console.log(e.target)
+  let value = e.target.textContent;
+  console.log(value)
+  if (value === 'Web') {
+    if (Array.from(webdev_project.classList).includes('projectShow')) {
+      webdev_project.classList.remove('projectShow');
+      webdev_project.classList.add('projectHide');
+
+    } else {
+      webdev_project.classList.add('projectShow');
+      webdev_project.classList.remove('projectHide');
+      if (Array.from(dotnet_project.classList).includes('projectShow')) {
+        dotnet_project.classList.remove('projectShow');
+        webdev_project.classList.add('projectHide');
+
+      }
+      if (Array.from(photo_project.classList).includes('projectShow')) {
+        photo_project.classList.remove('projectShow');
+        photo_project.classList.add('projectHide');
+
+      }
+    }
+  }
+
+  if (value === 'Photography') {
+    if (Array.from(photo_project.classList).includes('projectShow')) {
+      photo_project.classList.remove('projectShow');
+      photo_project.classList.add('projectHide');
+
+    } else {
+      photo_project.classList.add('projectShow');
+      photo_project.classList.remove('projectHide');
+      if (Array.from(dotnet_project.classList).includes('projectShow')) {
+        dotnet_project.classList.remove('projectShow');
+        dotnet_project.classList.add('projectHide');
+
+      }
+      if (Array.from(webdev_project.classList).includes('projectShow')) {
+        webdev_project.classList.remove('projectShow');
+        webdev_project.classList.add('projectHide');
+      }
+
+    }
+  }
+
+  if (value === 'Dot Net') {
+    if (Array.from(dotnet_project.classList).includes('projectShow')) {
+      dotnet_project.classList.remove('projectShow');
+      dotnet_project.classList.add('projectHide');
+    } else {
+      dotnet_project.classList.add('projectShow');
+      dotnet_project.classList.remove('projectHide');
+
+      if (Array.from(webdev_project.classList).includes('projectShow')) {
+        webdev_project.classList.remove('projectShow');
+        webdev_project.classList.add('projectHide');
+
+      }
+      if (Array.from(photo_project.classList).includes('projectShow')) {
+        photo_project.classList.remove('projectShow');
+        photo_project.classList.add('projectHide');
+
+      }
+    }
+  }
+})
+
 close.addEventListener("click", e => {
   about_modal.style.display = "none";
 });
 about_modal.addEventListener("click", e => {
-  //console.log(e.target)
   if (Array.from(e.target.classList).includes("modal_wrapper"))
     about_modal.style.display = "none";
 });

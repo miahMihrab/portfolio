@@ -10,6 +10,10 @@ body {
   overflow: hidden;
   margin: 3%;
 }
+a {
+  text-decoration: none;
+  color: #3cb371;
+}
 
 .abc {
   margin-top: 2%;
@@ -249,7 +253,6 @@ input {
 
 .hr {
   border: 0.2px solid #ddd;
-
 }
 
 .abt {
@@ -267,7 +270,13 @@ input {
   grid-template-columns: 50% 50%;
 }
 
-
+#webdev_project {
+  display: grid !important;
+  grid-template-columns: 50% 50% !important;
+}
+#webdev_project > div {
+  padding: 10px;
+}
 .at {
   padding-bottom: 10px;
   border-right: 0.5px solid #ddd;
@@ -280,8 +289,7 @@ input {
   height: 180px;
   padding-right: 10px;
   font-size: 1.2rem;
-  color: #A9A9A9;
-
+  color: #a9a9a9;
 }
 
 .otherAbout {
@@ -308,7 +316,9 @@ input {
 }
 
 #experience,
-#education {
+#education,
+#weather_app,
+#todo_app {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -343,37 +353,37 @@ input {
 .html,
 .english {
   width: 90%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 .css {
   width: 80%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 .js {
   width: 70%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 .node {
   width: 70%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 .net {
   width: 50%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 .bangla {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 .hindi {
   width: 60%;
-  background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 .services,
@@ -423,7 +433,6 @@ input {
   text-align: center;
 }
 
-
 .fulldl,
 .designdl,
 .others {
@@ -448,23 +457,21 @@ input {
   border-bottom: 0.5px solid #ddd;
 }
 
-
 #works ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 45%;
-
   float: right;
 }
 
-#works ul>li {
+#works ul > li {
   float: left;
   list-style: circle;
   cursor: pointer;
 }
 
-#works ul>li:hover {
+#works ul > li:hover {
   background-color: #3cb371;
   color: white;
   transition: 0.2s ease-in;
@@ -477,13 +484,13 @@ input {
 }
 
 .projectShow {
-  display: block;
+  display: block !important;
   animation-name: modal-animation;
   animation-duration: 0.6s;
 }
 
 .projectHide {
-  display: none;
+  display: none !important;
   animation-name: modal-animation;
   animation-duration: 0.6s;
 }
