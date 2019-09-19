@@ -6,12 +6,12 @@ const dev_logo = document.querySelector(".logo");
 const about_modal = document.querySelector(".modal_wrapper");
 const close = document.querySelector(".close");
 const button = document.querySelector("button");
-const webdev_project = document.querySelector('#webdev_project');
-const dotnet_project = document.querySelector('#dotnet_project');
-const photo_project = document.querySelector('#photography_project');
-const project_nav = document.querySelector('#works ul');
+const webdev_project = document.querySelector("#webdev_project");
+const dotnet_project = document.querySelector("#dotnet_project");
+const photo_project = document.querySelector("#photography_project");
+const project_div = document.querySelector(".ul");
 
-console.log(dotnet_project)
+console.log(dotnet_project);
 
 function showHide(value) {
   value = value.toLowerCase().trim();
@@ -115,80 +115,95 @@ aside.addEventListener("click", e => {
   try {
     const nxtSibling = document.getElementById(e.target.id).nextElementSibling;
     showHide(nxtSibling.textContent);
-    //console.log(nxtSibling.textContent)
   } catch {
     showHide(e.target.textContent);
-    //console.log(e.target.textContent)
   }
 });
 
-project_nav.addEventListener('click', e => {
-  //console.log(e.target)
-  let value = e.target.textContent;
-  console.log(value)
-  if (value === 'Web') {
-    if (Array.from(webdev_project.classList).includes('projectShow')) {
-      webdev_project.classList.remove('projectShow');
-      webdev_project.classList.add('projectHide');
-
+project_div.addEventListener("click", e => {
+  //console.log(e.target);
+  if (e.target.textContent === "Web") {
+    if (!Array.from(webdev_project.classList).includes("projectShow")) {
+      e.target.style.background = "#3cb371";
+      e.target.style.color = "#fff";
+      e.target.nextElementSibling.style.background = "#fff";
+      e.target.nextElementSibling.style.color = "#000";
+      e.target.nextElementSibling.nextElementSibling.style.background = "#fff";
+      e.target.nextElementSibling.nextElementSibling.style.color = "#000";
+      if (Array.from(dotnet_project.classList).includes("projectShow")) {
+        dotnet_project.classList.remove("projectShow");
+        dotnet_project.classList.add("projectHide");
+      }
+      if (Array.from(photo_project.classList).includes("projectShow")) {
+        photo_project.classList.remove("projectShow");
+        photo_project.classList.add("projectHide");
+      }
+      webdev_project.classList.add("projectShow");
+      webdev_project.classList.remove("projectHide");
     } else {
-      webdev_project.classList.add('projectShow');
-      webdev_project.classList.remove('projectHide');
-      if (Array.from(dotnet_project.classList).includes('projectShow')) {
-        dotnet_project.classList.remove('projectShow');
-        webdev_project.classList.add('projectHide');
-
-      }
-      if (Array.from(photo_project.classList).includes('projectShow')) {
-        photo_project.classList.remove('projectShow');
-        photo_project.classList.add('projectHide');
-
-      }
+      e.target.style.background = "";
+      e.target.style.color = "#000";
+      webdev_project.classList.remove("projectShow");
+      webdev_project.classList.add("projectHide");
     }
   }
 
-  if (value === 'Photography') {
-    if (Array.from(photo_project.classList).includes('projectShow')) {
-      photo_project.classList.remove('projectShow');
-      photo_project.classList.add('projectHide');
-
+  if (e.target.textContent === "Dot Net") {
+    if (!Array.from(dotnet_project.classList).includes("projectShow")) {
+      e.target.style.background = "#3cb371";
+      e.target.style.color = "#fff";
+      e.target.previousElementSibling.style.background = "#fff";
+      e.target.previousElementSibling.style.color = "#000";
+      e.target.nextElementSibling.style.background = "#fff";
+      e.target.nextElementSibling.style.color = "#000";
+      //document.querySelector(".ul span").style.background = "#3cb371";
+      if (Array.from(webdev_project.classList).includes("projectShow")) {
+        webdev_project.classList.remove("projectShow");
+        webdev_project.classList.add("projectHide");
+      }
+      if (Array.from(photo_project.classList).includes("projectShow")) {
+        photo_project.classList.remove("projectShow");
+        photo_project.classList.add("projectHide");
+      }
+      dotnet_project.classList.add("projectShow");
+      dotnet_project.classList.remove("projectHide");
     } else {
-      photo_project.classList.add('projectShow');
-      photo_project.classList.remove('projectHide');
-      if (Array.from(dotnet_project.classList).includes('projectShow')) {
-        dotnet_project.classList.remove('projectShow');
-        dotnet_project.classList.add('projectHide');
-
-      }
-      if (Array.from(webdev_project.classList).includes('projectShow')) {
-        webdev_project.classList.remove('projectShow');
-        webdev_project.classList.add('projectHide');
-      }
-
+      e.target.style.background = "";
+      e.target.style.color = "#000";
+      dotnet_project.classList.remove("projectShow");
+      dotnet_project.classList.add("projectHide");
     }
   }
 
-  if (value === 'Dot Net') {
-    if (Array.from(dotnet_project.classList).includes('projectShow')) {
-      dotnet_project.classList.remove('projectShow');
-      dotnet_project.classList.add('projectHide');
+  if (e.target.textContent === "Photography") {
+    if (!Array.from(photo_project.classList).includes("projectShow")) {
+      e.target.style.background = "#3cb371";
+      e.target.style.color = "#fff";
+      e.target.previousElementSibling.style.background = "#fff";
+      e.target.previousElementSibling.style.color = "#000";
+      e.target.previousElementSibling.previousElementSibling.style.background =
+        "#fff";
+      e.target.previousElementSibling.previousElementSibling.style.color =
+        "#000";
+
+      if (Array.from(webdev_project.classList).includes("projectShow")) {
+        webdev_project.classList.remove("projectShow");
+        webdev_project.classList.add("projectHide");
+      }
+      if (Array.from(dotnet_project.classList).includes("projectShow")) {
+        dotnet_project.classList.remove("projectShow");
+        dotnet_project.classList.add("projectHide");
+      }
+      photo_project.classList.add("projectShow");
+      photo_project.classList.remove("projectHide");
     } else {
-      dotnet_project.classList.add('projectShow');
-      dotnet_project.classList.remove('projectHide');
-
-      if (Array.from(webdev_project.classList).includes('projectShow')) {
-        webdev_project.classList.remove('projectShow');
-        webdev_project.classList.add('projectHide');
-
-      }
-      if (Array.from(photo_project.classList).includes('projectShow')) {
-        photo_project.classList.remove('projectShow');
-        photo_project.classList.add('projectHide');
-
-      }
+      e.target.style.background = "#3cb371";
+      e.target.style.color = "#fff";
+      photo_project.classList.remove("projectShow");
+      photo_project.classList.add("projectHide");
     }
   }
-})
+});
 
 close.addEventListener("click", e => {
   about_modal.style.display = "none";
