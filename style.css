@@ -264,9 +264,23 @@ input {
 
 .abt,
 .pricing,
-#mySkills {
+#mySkills,
+#blog {
   display: grid;
   grid-template-columns: 50% 50%;
+}
+
+#blog {
+  grid-template-rows: 30% 30%;
+  grid-row-gap: 10px;
+}
+
+#blog>div:nth-child(odd) {
+  border-right: 0.5px solid #ddd;
+}
+
+#blog>div {
+  border-bottom: 0.5px solid #ddd;
 }
 
 #webdev_project,
